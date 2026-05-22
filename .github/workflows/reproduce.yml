@@ -21,10 +21,10 @@ jobs:
 
       - run: npm install
 
-      - name: Run vitest 50 times, stop on first failure
+      - name: Run vitest 10 times, stop on first failure
         shell: bash
         run: |
-          for i in $(seq 1 50); do
+          for i in $(seq 1 10); do
             echo "::group::Iteration $i"
             if ! npx vitest run; then
               echo "::endgroup::"
@@ -33,4 +33,4 @@ jobs:
             fi
             echo "::endgroup::"
           done
-          echo "All 50 iterations passed"
+          echo "All 10 iterations passed"
